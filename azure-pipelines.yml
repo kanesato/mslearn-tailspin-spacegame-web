@@ -1,5 +1,5 @@
 pool:
-  name: 'self-hosted agent pool'
+  name: 'demonstration-pool'
 
 # ASP.NET.Core
 # Build and.test.ASP.NET.Core projects.targeting .. NET.Core.
@@ -21,15 +21,15 @@ steps:
     publishWebProjects: true
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'ME-MngEnvMCAP541339-yuichimasuda-1(7fd24fa5-b36e-4da0-bb40-2cd734d5fb2b)'
+    azureSubscription: 'Skaneshiro-external-sub-1(d8df623a-79c2-47ca-8542-9fdc6d9942e2)'
     appType: 'webApp'
-    appName: 'yuichimasuda-webapp'
+    appName: 'skaneshiro-webapp'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'ME-MngEnvMCAP541339-yuichimasuda-1(7fd24fa5-b36e-4da0-bb40-2cd734d5fb2b)'
+    azureSubscription: 'Skaneshiro-external-sub-1(d8df623a-79c2-47ca-8542-9fdc6d9942e2)'
     appType: 'webApp'
     WebAppName: 'app-AzureDevOpsDemo'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
