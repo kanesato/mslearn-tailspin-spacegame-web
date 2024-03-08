@@ -1,5 +1,5 @@
-pool:
-  name: 'self-hosted-poc-pool'
+# pool:
+#  name: 'self-hosted-poc-pool'
 
 # ASP.NET.Core
 # Build and.test.ASP.NET.Core projects.targeting .. NET.Core.
