@@ -19,17 +19,13 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'Skaneshiro-external-sub-1(d8df623a-79c2-47ca-8542-9fdc6d9942e2)'
-    appType: 'webApp'
-    appName: 'skaneshiro-webapp'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    deploymentMethod: 'auto'
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Skaneshiro-external-sub-1(d8df623a-79c2-47ca-8542-9fdc6d9942e2)'
     appType: 'webApp'
-    WebAppName: 'app-AzureDevOpsDemo'
+    WebAppName: 'poc-trial-01'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'poc-app-service'
+    SlotName: 'production'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
